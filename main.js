@@ -16,36 +16,65 @@ const classroom1 = new Classroom([student1, student2, student3, student4]);
 
 let students1 = classroom1.students;
 
-console.log(students1);
+function displayClassroom(students) {
 
-function displayClassroom(students){
+    document.getElementById('student-list').innerHTML = '';
 
-document.getElementById('student-list').innerHTML = '';
-
-for (let i = 0; i < students.length; i++) {
-    const element = students[i];
-    let studentList = document.getElementById('student-list');
-    let newLi = document.createElement('li');
-    studentList.appendChild(newLi);
-    const studentName = document.createTextNode(element.name+' '+element.surname);
-    newLi.appendChild(studentName)
-}
+    for (let i = 0; i < students.length; i++) {
+        const element = students[i];
+        let studentList = document.getElementById('student-list');
+        let newLi = document.createElement('li');
+        studentList.appendChild(newLi);
+        const studentName = document.createTextNode(element.name + ' ' + element.surname);
+        newLi.appendChild(studentName)
+    }
 }
 
-function shuffleTheClassroom(){
-
+function shuffleTheClassroom() {
+    shuffle(students1)
+    displayClassroom(students1)
 }
 
-function addStudentToClassroom(){
-    const students = classroom1.students
-const inputName = document.getElementById('input-name');
-const inputSurname = document.getElementById('input-surname');
-const newStudent = new Student(inputName.value, inputSurname.value);
-if(inputName.value !== '' && inputSurname.value !== '') {
-    students.push(newStudent);
-    displayClassroom(classroom1.students)
+function addStudentToClassroom() {
+    const students = classroom1.students;
+    let inputName = document.getElementById('input-name');
+    let inputSurname = document.getElementById('input-surname');
+    const newStudent = new Student(inputName.value, inputSurname.value);
+
+    if (inputName.value === '') {
+        inputName.value = 'inserire un nome'
+    }
+    if (inputSurname.value === '') {
+        inputSurname.value = 'inserire un cognome'
+    }
+
+    else if ((inputName.value !== '' && inputSurname.value !== '') && (inputName.value !== 'inserire un nome' && inputSurname.value !== 'inserire un cognome')) {
+        students.push(newStudent);
+        displayClassroom(classroom1.students)
+        inputName.value = '';
+        inputSurname.value = '';
+    }
 }
 
-}
 
 displayClassroom(students1)
+
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+function resetInputNameOnClick(){
+    let inputName = document.getElementById('input-name');
+    inputName.value = '';
+}
+
+function resetInputSurnameOnClick(){
+    let inputSurname = document.getElementById('input-surname');
+    inputSurname.value = '';
+}

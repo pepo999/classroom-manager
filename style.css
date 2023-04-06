@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/* *{
+border: solid red 1px;
+box-sizing: border-box;
+} */
+
+body, html{
+background-color: rgb(20, 20, 20);
+}
+
+html{
+display: flex;
+justify-content: center;
+padding-top: 3vh;
+padding-bottom: 3vh;
+height: 100vh;
+}
+
+body{
+width: 61.8vw;
+/* height: 100%; */
+background-color: rgb(47, 47, 47);
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+
+ul{
+   /* display: grid; */
+columns: 2;
+color: rgb(100, 195, 105);
+font-size: large;
+}
+
+.main-div{
+    background-color: rgb(135, 168, 154);
+    display: flex;
+    flex-direction: row;
+    height: 42vh;
+    width: 50vw;
+   
+}
+
+.left-div{
+    background-color: rgb(26, 26, 26);
+    flex-grow: 1;
+    border: solid 2px;
+    overflow: auto;
+    flex-basis: 0;
+}
+
+.right-div{
+    flex-grow: 1;
+    border: solid;
+    border-width:  2px 2px 2px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 0;
+}
+
+h1{
+    font-family: 'Audiowide', cursive;
+    font-size: 60px;
+    color: rgb(100, 195, 105);
+    flex-basis: 0;
+}
