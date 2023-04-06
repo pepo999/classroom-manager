@@ -27,6 +27,16 @@ function displayClassroom(students) {
         studentList.appendChild(newLi);
         const studentName = document.createTextNode(element.name + ' ' + element.surname);
         newLi.appendChild(studentName)
+        const removeButton = document.createElement('button');
+
+        const buttonText = document.createTextNode('Rimuovi');
+
+        removeButton.appendChild(buttonText);
+
+        removeButton.addEventListener('click', (event) => removeStudent(element));
+
+        newLi.appendChild(removeButton);
+       studentList.appendChild(newLi);
     }
 }
 
@@ -40,7 +50,7 @@ function addStudentToClassroom() {
     let inputName = document.getElementById('input-name');
     let inputSurname = document.getElementById('input-surname');
     const newStudent = new Student(inputName.value, inputSurname.value);
-
+    
     if (inputName.value === '') {
         inputName.value = 'inserire un nome'
     }
@@ -54,7 +64,9 @@ function addStudentToClassroom() {
         inputName.value = '';
         inputSurname.value = '';
     }
+
 }
+
 
 
 displayClassroom(students1)
@@ -78,3 +90,10 @@ function resetInputSurnameOnClick(){
     let inputSurname = document.getElementById('input-surname');
     inputSurname.value = '';
 }
+
+function removeStudent(student){
+    const studentIndex = students1.indexOf(student);
+    students1.splice(studentIndex, 1);
+    displayClassroom(students1);
+}
+

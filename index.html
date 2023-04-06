@@ -22,18 +22,19 @@
     </div>
     <div class="right-div">
         <button onclick="shuffleTheClassroom()">Rimescola la classe</button>
+      <hr>
+        <h3>Inserimento Studente</h3>
         <div>
-            <h3>Inserimento Studente</h3>
-            <div>
-                <span>nome</span>
-                <input type="text" id="input-name" onclick="resetInputNameOnClick()">
-            </div>
-            <div>
-                <span>cognome</span>
-                <input type="text" id="input-surname" onclick="resetInputSurnameOnClick()">
-            </div>
-            <button onclick="addStudentToClassroom()">Inserisci studente</button>
+            
+            <div class="inputs">          
+                <span>Nome</span>
+                <input type="text" id="input-name" onclick="resetInputNameOnClick()">           
+                <span>Cognome</span>
+                <input type="text" id="input-surname" onclick="resetInputSurnameOnClick()">            
         </div>
+            
+        </div>
+        <button onclick="addStudentToClassroom()">Inserisci studente</button>
     </div>
     </div>
 </body>
