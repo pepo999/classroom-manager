@@ -33,15 +33,15 @@ align-items: center;
 
 ul{
     margin: 0px;
-    height: fit-content;
-    /* width: 95%; */
-columns: 4 auto;
+    height: 90%;
+columns: 4;
 color: rgb(100, 195, 105);
 font-size: 1.7vh;
-padding: 0;
-display: block;
-gap: 10px;
 padding: 10px;
+/* gap: 10px; */
+display: grid;
+grid-template-columns: 25% 25% 25% 25%;
+grid-template-rows: 20% 20% 20% 20%;
 }
 
 .main-div{
@@ -50,15 +50,18 @@ padding: 10px;
     flex-direction: row;
     height: 61.8vh;
     width: 50vw;
-   
+    border-radius: 5px;
 }
 
 .left-div{
     background-color: rgb(62, 62, 62);
     flex-grow: 3;
-    border: solid 2px;
+    border: solid 2px black;
     overflow: auto;
     flex-basis: 0;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .right-div{
@@ -69,6 +72,9 @@ padding: 10px;
     flex-direction: column;
     align-items: center;
     flex-basis: 0;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 h1{
@@ -88,7 +94,7 @@ button{
     background-color: rgb(47, 47, 47);
     color: rgb(100, 195, 105);
     font-family: 'Oxanium', cursive;
-    
+    border-radius: 5px;
 }
 
 hr{
@@ -105,6 +111,7 @@ hr{
 input{
     color: red;
     font-family: 'Oxanium', cursive;
+    margin: 10px 0px;
 }
 
 li{
@@ -113,22 +120,27 @@ li{
     align-items: center;
     text-align: center;
     padding: 10px;
+    padding-bottom: 5px;
     list-style: none;
     background-color: rgb(47, 47, 47);
     border-top: solid 1px rgb(96, 163, 101);
     border-left: solid 1px rgb(96, 163, 101);
-    border-right: solid 1px rgb(56, 69, 57);
-    border-bottom: solid 1px rgb(56, 69, 57);
+    border-right: solid 1px rgb(87, 109, 89);
+    border-bottom: solid 1px rgb(87, 109, 89);
     text-shadow: 0px 0px 2px;
     box-sizing: border-box;
     white-space: nowrap;
-    display: block;
+    margin: 3px 3px;
+    margin-block-start: 0px;
+    border-radius: 5px;
 }
 
 li>button{
     width: fit-content;
+    height: fit-content;
     border-radius: 0;
     background-color: rgb(59, 59, 59);
     color: rgb(100, 195, 105);
     font-family: 'Oxanium', cursive;
+    border-radius: 5px;
 }

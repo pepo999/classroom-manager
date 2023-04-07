@@ -33,7 +33,7 @@ function displayClassroom(students) {
         removeButton.appendChild(buttonText);
         removeButton.addEventListener('click', (event) => removeStudent(element));
         studentList.appendChild(newLi);
-        newLi.appendChild(br);
+        newLi.appendChild(br);   
         newLi.appendChild(removeButton);
        studentList.appendChild(newLi);
       
