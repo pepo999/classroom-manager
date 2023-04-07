@@ -7,10 +7,10 @@
 
 'use strict'
 
-const student1 = new Student('Simone', 'Maccarone');
-const student2 = new Student('Luis Alberto', 'Castro');
-const student3 = new Student('Davide', 'Consigliere');
-const student4 = new Student('Francesco', 'Badile');
+const student1 = new Student('Simone', 'Maccarone', '20/05/2003');
+const student2 = new Student('Luis Alberto', 'Castro', '28/07/1993');
+const student3 = new Student('Davide', 'Consigliere', '29/09/1989');
+const student4 = new Student('Francesco', 'Badile', '05/09/1993');
 
 const classroom1 = new Classroom([student1, student2, student3, student4]);
 
@@ -24,7 +24,6 @@ function displayClassroom(students) {
         const element = students[i];
         let studentList = document.getElementById('student-list');
         let newLi = document.createElement('li');
-        
         const studentName = document.createTextNode(element.name + ' ' + element.surname);
         newLi.appendChild(studentName)
         const removeButton = document.createElement('button');
@@ -33,10 +32,10 @@ function displayClassroom(students) {
         removeButton.appendChild(buttonText);
         removeButton.addEventListener('click', (event) => removeStudent(element));
         studentList.appendChild(newLi);
-        newLi.appendChild(br);   
+        newLi.appendChild(br);
         newLi.appendChild(removeButton);
-       studentList.appendChild(newLi);
-      
+        studentList.appendChild(newLi);
+
     }
 }
 
@@ -49,12 +48,15 @@ function addStudentToClassroom() {
     const students = classroom1.students;
     let inputName = document.getElementById('input-name');
     let inputSurname = document.getElementById('input-surname');
-    const newStudent = new Student(inputName.value, inputSurname.value);
-    
+    let inputDate = document.getElementById('input-date')
+    const newStudent = new Student(inputName.value, inputSurname.value, inputDate.value);
+
     if (inputName.value === '') {
+        inputName.style.color = 'red'
         inputName.value = 'inserire un nome'
     }
     if (inputSurname.value === '') {
+        inputSurname.style.color = 'red'
         inputSurname.value = 'inserire un cognome'
     }
 
@@ -63,6 +65,7 @@ function addStudentToClassroom() {
         displayClassroom(classroom1.students)
         inputName.value = '';
         inputSurname.value = '';
+        inputDate.value = '';
     }
 
 }
@@ -81,19 +84,29 @@ function shuffle(array) {
     return array;
 }
 
-function resetInputNameOnClick(){
+function resetInputNameOnClick() {
     let inputName = document.getElementById('input-name');
     inputName.value = '';
+    inputName.style.color = 'black'
 }
 
-function resetInputSurnameOnClick(){
+function resetInputSurnameOnClick() {
     let inputSurname = document.getElementById('input-surname');
     inputSurname.value = '';
+    inputSurname.style.color = 'black'
 }
 
-function removeStudent(student){
+function removeStudent(student) {
     const studentIndex = students1.indexOf(student);
     students1.splice(studentIndex, 1);
     displayClassroom(students1);
+}
+
+function birthday(){
+    const students = classroom1.students;
+    for (let i = 0; i < students.length; i++) {
+        const element = students[i];
+        
+    }
 }
 

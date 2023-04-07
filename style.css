@@ -109,9 +109,9 @@ hr{
 }
 
 input{
-    color: red;
+    /* color: red; */
     font-family: 'Oxanium', cursive;
-    margin: 10px 0px;
+    margin: 20px 0px;
 }
 
 li{
