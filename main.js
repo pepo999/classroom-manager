@@ -24,19 +24,19 @@ function displayClassroom(students) {
         const element = students[i];
         let studentList = document.getElementById('student-list');
         let newLi = document.createElement('li');
-        studentList.appendChild(newLi);
+        
         const studentName = document.createTextNode(element.name + ' ' + element.surname);
         newLi.appendChild(studentName)
         const removeButton = document.createElement('button');
-
         const buttonText = document.createTextNode('Rimuovi');
-
+        const br = document.createElement('br')
         removeButton.appendChild(buttonText);
-
         removeButton.addEventListener('click', (event) => removeStudent(element));
-
+        studentList.appendChild(newLi);
+        newLi.appendChild(br);
         newLi.appendChild(removeButton);
        studentList.appendChild(newLi);
+      
     }
 }
 
