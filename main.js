@@ -32,11 +32,11 @@ function displayClassroom(students) {
         let newLi = document.createElement('li');
         const studentName = document.createTextNode(element.name + ' ' + element.surname);
         newLi.appendChild(studentName)
-        if(element.isBirthday()) {
-        //    newLi.style.color = '#fafafa'
-        //    newLi.style.textShadow = '0px 0px 5px #fafafa';
-           newLi.style.animationName = 'colorRotate';
-        } 
+        if (element.isBirthday()) {
+            newLi.style.color = '#fafafa'
+            //    newLi.style.textShadow = '0px 0px 5px #fafafa';
+            newLi.style.animationName = 'colorRotate';
+        }
         const removeButton = document.createElement('button');
         const buttonText = document.createTextNode('Rimuovi');
         const br = document.createElement('br')
@@ -70,7 +70,13 @@ function addStudentToClassroom() {
         inputSurname.style.color = 'red'
         inputSurname.value = 'inserire un cognome'
     }
-
+    let inputDateStr = inputDate.value;
+    if(inputDateStr === '') {console.log('no date for ' + inputName.value)}
+    if (inputDateStr[2] !== '/' && inputDateStr[5] !== '/' && inputDateStr[8] !== '/' && inputDateStr !== '') {
+        console.log(inputDateStr[2])
+        inputDate.style.color = 'red';
+        inputDate.value = 'inserire formato corretto'
+    } 
     else if ((inputName.value !== '' && inputSurname.value !== '') && (inputName.value !== 'inserire un nome' && inputSurname.value !== 'inserire un cognome')) {
         students.push(newStudent);
         displayClassroom(classroom1.students)
@@ -86,9 +92,9 @@ function addStudentToClassroom() {
 displayClassroom(students1)
 
 function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
@@ -107,8 +113,15 @@ function resetInputSurnameOnClick() {
     inputSurname.style.color = 'black'
 }
 
+function resetInputDateOnClick() {
+    let inputDate = document.getElementById('input-date');
+    inputDate.value = '';
+    inputDate.style.color = 'black'
+}
+
 function removeStudent(student) {
     const studentIndex = students1.indexOf(student);
     students1.splice(studentIndex, 1);
     displayClassroom(students1);
 }
+

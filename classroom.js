@@ -8,9 +8,13 @@ class Classroom{
 this.students.push(student)
     }
 
-    removeStudent(student){
+    
+        removeStudent(student) {
+            const studentIndex = students.indexOf(student);
+            students.splice(studentIndex, 1);
+            displayClassroom(students1);
+        }
 
-    }
 
  shuffleStudents(){
   shuffle(students)
