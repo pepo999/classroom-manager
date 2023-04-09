@@ -56,10 +56,15 @@
     li{
         padding-top: 3vh;
         list-style: none;
-        font-size: 5vw;
+        font-size: 4.5vw;
    height: 20vw;
    flex-grow: 1;
    min-height: 10vh;
+    }
+
+
+    input{
+        margin: 5px 5;
     }
 
     li>button{
@@ -71,6 +76,7 @@
         font-family: 'Oxanium', cursive;
         border-radius: 4px;
         font-size: 1.5vw;
+        margin-top: 0px;
     }
 
     button{
