@@ -1,11 +1,89 @@
 @media screen and (max-width: 992px) {
 
+    * {
+        border: solid red 1px;
+    }
 
+    html {
+        display: flex;
+        justify-content: center;
+      margin: 0px;
+      padding: 0px;
+      height: 100vh;
+    }
 
+    body {
+        margin: 0px;
+        padding: 0px;
+        width: auto;
+        /* height: 100%; */
+        background-color: rgb(26, 26, 26);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
 
+    h1{
+        height: fit-content;
+        font-size: 5vh;
+        padding: 20px;
+        padding-bottom: 70px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
+    .main-div{
+        background-color: rgb(135, 168, 154);
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        width: 100vw;
+        border-radius: 5px;
+    }
 
+    ul{
+        margin: 0px;
+    display: flex;
+    flex-direction: column;
+    }
 
+    .left-div{
+        flex-grow: 1.5; 
+        /* overflow: scroll; */
+    }
 
-    
+    li{
+        padding-top: 3vh;
+        list-style: none;
+        font-size: 5vw;
+   height: 15vh;
+   flex-grow: 1;
+   min-height: 10vh;
+    }
+
+    li>button{
+        width: fit-content;
+        height: 2vh;
+        border-radius: 0;
+        background-color: rgb(59, 59, 59);
+        color: rgb(100, 195, 105);
+        font-family: 'Oxanium', cursive;
+        border-radius: 4px;
+        font-size: 1.5vw;
+    }
+
+    button{
+        margin: 2vh;
+        width: 100px;
+        height: 100px;
+        border-radius: 0;
+        background-color: rgb(47, 47, 47);
+        color: rgb(100, 195, 105);
+        font-family: 'Oxanium', cursive;
+        font-size: 4vw;
+        border-radius: 5px;
+        text-shadow: 0px 0px 2px;
+    }
+
 }
