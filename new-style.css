@@ -37,7 +37,7 @@
         background-color: rgb(135, 168, 154);
         display: flex;
         flex-direction: row;
-        height: auto;
+        height: 73vh;
         width: 100vw;
         border-radius: 5px;
     }
