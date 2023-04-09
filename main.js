@@ -9,10 +9,16 @@
 
 const student1 = new Student('Simone', 'Maccarone', '20/05/2003');
 const student2 = new Student('Luis Alberto', 'Castro', '28/07/1993');
-const student3 = new Student('Davide', 'Consigliere', '29/09/1989');
-const student4 = new Student('Francesco', 'Badile', '05/09/1993');
+const student3 = new Student('Jing', 'Wang', '16/06/1993');
+const student4 = new Student('Davide', 'Cresta', '30/05/2002');
+const student5 = new Student('Davide', 'Consigliere', '29/09/1989');
+const student6 = new Student('Francesco', 'Badile', '05/09/1993');
+const student7 = new Student('Valentina', 'Cherubini', '01/06/2001');
+const student8 = new Student('Pietro', 'Viglino', '09/04/1988');
+const student9 = new Student('Daniele', 'Puggioni', '17/08/1999');
+const student10 = new Student('Vlad', 'P\'yatnytskyy', '02/10/1997');
 
-const classroom1 = new Classroom([student1, student2, student3, student4]);
+const classroom1 = new Classroom([student1, student2, student3, student4, student5, student6, student7, student8, student9, student10]);
 
 let students1 = classroom1.students;
 
@@ -26,6 +32,11 @@ function displayClassroom(students) {
         let newLi = document.createElement('li');
         const studentName = document.createTextNode(element.name + ' ' + element.surname);
         newLi.appendChild(studentName)
+        if(element.isBirthday()) {
+        //    newLi.style.color = '#fafafa'
+        //    newLi.style.textShadow = '0px 0px 5px #fafafa';
+           newLi.style.animationName = 'colorRotate';
+        } 
         const removeButton = document.createElement('button');
         const buttonText = document.createTextNode('Rimuovi');
         const br = document.createElement('br')
@@ -101,12 +112,3 @@ function removeStudent(student) {
     students1.splice(studentIndex, 1);
     displayClassroom(students1);
 }
-
-function birthday(){
-    const students = classroom1.students;
-    for (let i = 0; i < students.length; i++) {
-        const element = students[i];
-        
-    }
-}
-

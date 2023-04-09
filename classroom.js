@@ -17,7 +17,12 @@ this.students.push(student)
   return this.students;
     }
 
- 
+    shuffleTheClassroom() {
+        shuffle(students)
+        displayClassroom(students)
+    }
+
 }
+
 
 
