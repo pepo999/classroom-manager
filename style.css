@@ -34,7 +34,7 @@ align-items: center;
 ul{
     margin: 0px;
     height: 90%;
-columns: 4;
+ 
 color: rgb(100, 195, 105);
 font-size: 1.7vh;
 padding: 10px;
@@ -55,6 +55,7 @@ grid-template-rows: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 
 
 .left-div{
     padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
     background-color: rgb(62, 62, 62);
     flex-grow: 3;
     border: solid 2px black;
