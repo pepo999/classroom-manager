@@ -74,7 +74,9 @@ function addStudentToClassroom() {
         inputDate.style.color = 'red';
         inputDate.value = 'inserire formato corretto'
     }
-    if (inputDateStr.length !== 10) {
+    if ( inputDateStr.length !== 0 &&
+        inputDateStr.length !== 10 
+        ) {
         inputDate.style.color = 'red';
         inputDate.value = 'inserire formato corretto'
     }
