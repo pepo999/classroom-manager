@@ -79,7 +79,7 @@ grid-template-rows: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 
 }
 
 h3{
-    margin-left: 0.5vh;
+    margin-left: 5px;
 }
 
 h1{
@@ -118,7 +118,11 @@ hr{
 input{
     /* color: red; */
     font-family: 'Oxanium', cursive;
-    margin: 0.5vh 0px;
+    margin: 5px 5px;
+}
+
+span{
+    margin: 5px;
 }
 
 li{
