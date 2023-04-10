@@ -14,7 +14,7 @@ const student4 = new Student('Davide', 'Cresta', '30/05/2002');
 const student5 = new Student('Davide', 'Consigliere', '29/09/1989');
 const student6 = new Student('Francesco', 'Badile', '05/09/1993');
 const student7 = new Student('Valentina', 'Cherubini', '01/06/2001');
-const student8 = new Student('Pietro', 'Viglino', '09/04/1988');
+const student8 = new Student('Pietro', 'Viglino', '29/12/1988');
 const student9 = new Student('Daniele', 'Puggioni', '17/08/1999');
 const student10 = new Student('Vlad', 'P\'yatnytskyy', '02/10/1997');
 
@@ -23,9 +23,7 @@ const classroom1 = new Classroom([student1, student2, student3, student4, studen
 let students1 = classroom1.students;
 
 function displayClassroom(students) {
-
     document.getElementById('student-list').innerHTML = '';
-
     for (let i = 0; i < students.length; i++) {
         const element = students[i];
         let studentList = document.getElementById('student-list');
@@ -46,7 +44,6 @@ function displayClassroom(students) {
         newLi.appendChild(br);
         newLi.appendChild(removeButton);
         studentList.appendChild(newLi);
-
     }
 }
 
@@ -71,12 +68,17 @@ function addStudentToClassroom() {
         inputSurname.value = 'inserire un cognome'
     }
     let inputDateStr = inputDate.value;
-    if(inputDateStr === '') {console.log('no date for ' + inputName.value)}
-    if (inputDateStr[2] !== '/' && inputDateStr[5] !== '/' && inputDateStr[8] !== '/' && inputDateStr !== '') {
-        console.log(inputDateStr[2])
+    if (inputDateStr === '') { console.log('no date for ' + inputName.value) }
+    if (inputDateStr[2] !== '/' && inputDateStr[5] !== '/' &&
+        inputDateStr !== '') {
         inputDate.style.color = 'red';
         inputDate.value = 'inserire formato corretto'
-    } 
+    }
+    if (inputDateStr.length !== 10) {
+        inputDate.style.color = 'red';
+        inputDate.value = 'inserire formato corretto'
+    }
+
     else if ((inputName.value !== '' && inputSurname.value !== '') && (inputName.value !== 'inserire un nome' && inputSurname.value !== 'inserire un cognome')) {
         students.push(newStudent);
         displayClassroom(classroom1.students)
@@ -84,7 +86,6 @@ function addStudentToClassroom() {
         inputSurname.value = '';
         inputDate.value = '';
     }
-
 }
 
 

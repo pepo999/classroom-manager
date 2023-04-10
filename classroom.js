@@ -4,9 +4,6 @@ class Classroom{
         this.students = students;
     }
 
-    addStudent(student){
-this.students.push(student)
-    }
 
     
         removeStudent(student) {
