@@ -46,12 +46,13 @@ function displayClassroom(students) {
     }
 }
 
-// function displayClassroom2 () {
-//     const studentList = document.getElementById('student-list');
-
-//     for (let i = 0; i < classroom1.students.length; i++) {
-//         const element = classroom.students[i];
-//         studentList.innerHTML += `<li class = 'list-element'>${student.name} ${student.surname}<button>cancella </button></li>`
+// function displayClassroom(students) {
+//     document.getElementById('student-list').innerHTML = '';
+//     for (let i = 0; i < students.length; i++) { 
+//         const element = students[i];
+//         const studentList = document.getElementById('student-list');
+//         const removeButton = document.createElement('button');
+//         studentList.innerHTML += `<li>${element.name} ${element.surname}<br><button>Rimuovi</button></li>`
 //     }
 // }
 
