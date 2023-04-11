@@ -1,9 +1,9 @@
-///BONUS
-// 1) rimozione dello studente
-// 2) sito esteticamente gradevole
-// 3) disposizione degli studenti non in lista ma affiancati a due a due
-// 4) aggiunta della data di nascita dello studente
-// 5) se è il compleanno dello studente il suo nome sarà scritto in modo evidenziato
+
+//appunto: per riferirmi a un elemento di html che ha class ma non id posso usare document.querySelector('h1')
+//usa le stesse regole del css: ex document.querySelector('#student-list'), document.querySelector('.main-div') oppure
+//il querySelector prende solo il primo elemento con quel nome. per prenderli tutti uso document.querySelectorAll('h1')
+
+
 
 'use strict'
 
@@ -45,6 +45,15 @@ function displayClassroom(students) {
         studentList.appendChild(newLi);
     }
 }
+
+// function displayClassroom2 () {
+//     const studentList = document.getElementById('student-list');
+
+//     for (let i = 0; i < classroom1.students.length; i++) {
+//         const element = classroom.students[i];
+//         studentList.innerHTML += `<li class = 'list-element'>${student.name} ${student.surname}<button>cancella </button></li>`
+//     }
+// }
 
 function shuffleTheClassroom() {
     shuffle(students1)
