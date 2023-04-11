@@ -7,7 +7,7 @@
 
 'use strict'
 
-const student1 = new Student('Simone', 'Maccarone', '20/05/2003');
+const student1 = new Student('Simone', 'Maccarone', '20/05/2003');  //istanziare un oggetto
 const student2 = new Student('Luis Alberto', 'Castro', '28/07/1993');
 const student3 = new Student('Jing', 'Wang', '16/06/1993');
 const student4 = new Student('Davide', 'Cresta', '30/05/2002');
@@ -32,7 +32,6 @@ function displayClassroom(students) {
         newLi.appendChild(studentName)
         if (element.isBirthday()) {
             newLi.style.color = '#fafafa'
-            //    newLi.style.textShadow = '0px 0px 5px #fafafa';
             newLi.style.animationName = 'colorRotate';
         }
         const removeButton = document.createElement('button');
@@ -74,14 +73,12 @@ function addStudentToClassroom() {
         inputDate.style.color = 'red';
         inputDate.value = 'inserire formato corretto'
     }
-    if ( inputDateStr.length !== 0 &&
-        inputDateStr.length !== 10 
-        ) {
+    if (inputDateStr.length !== 0 &&
+        inputDateStr.length !== 10
+    ) {
         inputDate.style.color = 'red';
         inputDate.value = 'inserire formato corretto'
-    }
-
-    else if ((inputName.value !== '' && inputSurname.value !== '') && (inputName.value !== 'inserire un nome' && inputSurname.value !== 'inserire un cognome')) {
+    } else if ((inputName.value !== '' && inputSurname.value !== '') && (inputName.value !== 'inserire un nome' && inputSurname.value !== 'inserire un cognome')) {
         students.push(newStudent);
         displayClassroom(classroom1.students)
         inputName.value = '';
@@ -89,8 +86,6 @@ function addStudentToClassroom() {
         inputDate.value = '';
     }
 }
-
-
 
 displayClassroom(students1)
 
@@ -127,4 +122,3 @@ function removeStudent(student) {
     students1.splice(studentIndex, 1);
     displayClassroom(students1);
 }
-
