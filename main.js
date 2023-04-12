@@ -46,16 +46,6 @@ function displayClassroom(students) {
     }
 }
 
-// function displayClassroom(students) {
-//     document.getElementById('student-list').innerHTML = '';
-//     for (let i = 0; i < students.length; i++) { 
-//         const element = students[i];
-//         const studentList = document.getElementById('student-list');
-//         const removeButton = document.createElement('button');
-//         studentList.innerHTML += `<li>${element.name} ${element.surname}<br><button>Rimuovi</button></li>`
-//     }
-// }
-
 function shuffleTheClassroom() {
     shuffle(students1)
     displayClassroom(students1)
